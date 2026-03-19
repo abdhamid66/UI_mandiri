@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
 bottom: PreferredSize(
-  preferredSize: const Size.fromHeight(5),
+  preferredSize: const Size.fromHeight(4),
   child: Container(
     height: 2,
     width: double.infinity,
