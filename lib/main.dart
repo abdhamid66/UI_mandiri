@@ -36,10 +36,6 @@ class HomePage extends StatelessWidget {
             letterSpacing: 1,
           ),
         ),
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(3),
-          child: ColoredBox(color: Colors.yellow, child: SizedBox(height: 3)),
-        ),
         actions: const [
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -49,6 +45,14 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
+bottom: PreferredSize(
+  preferredSize: const Size.fromHeight(5),
+  child: Container(
+    height: 2,
+    width: double.infinity,
+    color: Colors.yellow,
+  ),
+),
       ),
 
       // body
