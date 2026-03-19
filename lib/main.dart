@@ -54,11 +54,18 @@ class HomePage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blue[700],
               borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text("saldo Anda", style: TextStyle(color: Colors.white70)),
+                Text("Saldo Anda",style: TextStyle(color: Colors.white70)),
                 SizedBox(height: 8),
                 Text(
                   "Rp 20.000.000",
