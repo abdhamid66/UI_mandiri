@@ -7,8 +7,8 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-@override
-  Widget build(BuildContext context){
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
@@ -16,99 +16,103 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-
-@override
-Widget build(BuildContext context){
-  return Scaffold(
-    backgroundColor: Colors.blue[900],
-    
-    // appBar: AppBar
-    appBar: AppBar(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       backgroundColor: Colors.blue[900],
-      elevation: 0,
-      title: const Text(" by Mandiri"),
-      actions: const [
-        Padding(
-          padding: EdgeInsets.all(8.0),
-        )
-      ],
-    ),
 
-    // body
-    body: ListView(
-      children: [
-        // saldo
-        Container(
-          margin: const EdgeInsets.all(16),
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.blue[700],
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text("saldo Anda", style: TextStyle(color: Colors.white70),
-              ),
-              SizedBox(height: 8),
-              Text("Rp 20.000.000", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),),
-            ],
-          ),
+      // appBar: AppBar
+      appBar: AppBar(
+        backgroundColor: Colors.blue[900],
+        elevation: 0,
+        title: const Text(
+          "Livin' by mandiri",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        // menu
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 16),
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(children: [
-            // row 1
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                menuItem(Icons.send, "Transfer"),
-                menuItem(Icons.payment, "bayar"),
-                menuItem(Icons.phone_android, "Pulsa"),
-                menuItem(Icons.account_balance, "Top Up"),
-              ],
-            ),
-            const SizedBox(height: 20),
-            // row 2
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                menuItem(Icons.account_balance_wallet, "Tagihan"),
-                menuItem(Icons.qr_code_scanner, "Scan QR"),
-                menuItem(Icons.receipt_long, "Riwayat"),
-                menuItem(Icons.settings, "Lainnya"),
-              ],
-            ),
-          ],
-        ),
+        actions: const [Padding(padding: EdgeInsets.all(8.0))],
       ),
-      const SizedBox(height: 20),
 
-      // list transaksi
-      Container(
-        margin: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+      // body
+      body: ListView(
+        children: [
+          // saldo
+          Container(
+            margin: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.blue[700],
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text("saldo Anda", style: TextStyle(color: Colors.white70)),
+                SizedBox(height: 8),
+                Text(
+                  "Rp 20.000.000",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // menu
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              children: [
+                // row 1
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    menuItem(Icons.send, "Transfer"),
+                    menuItem(Icons.payment, "bayar"),
+                    menuItem(Icons.phone_android, "Pulsa"),
+                    menuItem(Icons.account_balance, "Top Up"),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                // row 2
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    menuItem(Icons.account_balance_wallet, "Tagihan"),
+                    menuItem(Icons.qr_code_scanner, "Scan QR"),
+                    menuItem(Icons.receipt_long, "Riwayat"),
+                    menuItem(Icons.settings, "Lainnya"),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // list transaksi
+          Container(
+            margin: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
                 Text(
                   "Transaksi Terakhir",
-                  style: TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 10),
               ],
-        ),
-        ),
-      // LISTVIEW ITEM
+            ),
+          ),
+          // LISTVIEW ITEM
           ListTile(
             leading: Icon(Icons.arrow_upward, color: Colors.red),
             title: Text("Transfer ke Budi"),
@@ -133,6 +137,7 @@ Widget build(BuildContext context){
       ),
     );
   }
+
   // widget menu item
   static Widget menuItem(IconData icon, String title) {
     return Column(
