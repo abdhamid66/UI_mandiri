@@ -222,10 +222,10 @@ class HomePage extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.blue[50],
+            color: Colors.yellow[100],
             shape: BoxShape.circle,
           ),
-          child: Icon(icon, color: Colors.blue[900], size: 28),
+          child: Icon(icon, color: Colors.yellow[700], size: 28),
         ),
         const SizedBox(height: 8),
         Text(
