@@ -27,6 +27,10 @@ class HomePage extends StatelessWidget {
       // appBar: AppBar
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(3),
+          child: ColoredBox(color: Colors.yellow, child: SizedBox(height: 3)),
+        ),
         elevation: 0,
         title: const Text(
           "Livin' by Mandiri",
@@ -51,29 +55,26 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 16),
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: const [
-      Text(
-        "Halo, Abd Hamid👋",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      SizedBox(height: 4),
-      Text(
-        "Selamat Datang Kembali",
-        style: TextStyle(
-          color: Colors.white70,
-          fontSize: 14,
-        ),
-      ),
-    ],
-  ),
-),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  "Halo, Abd Hamid👋",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  "Selamat Datang Kembali",
+                  style: TextStyle(color: Colors.white70, fontSize: 14),
+                ),
+              ],
+            ),
+          ),
           // saldo
           Container(
             margin: const EdgeInsets.all(16),
@@ -199,8 +200,14 @@ class HomePage extends StatelessWidget {
               child: Icon(Icons.payment, color: Colors.orange),
             ),
             title: const Text("Bayar Listrik"),
-            subtitle: const Text("3 hari lalu" ),
-            trailing: const Text("- Rp 150.000 ", style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
+            subtitle: const Text("3 hari lalu"),
+            trailing: const Text(
+              "- Rp 150.000 ",
+              style: TextStyle(
+                color: Colors.orange,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),
