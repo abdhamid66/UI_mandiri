@@ -36,7 +36,12 @@ class HomePage extends StatelessWidget {
             letterSpacing: 1,
           ),
         ),
-        actions: const [Padding(padding: EdgeInsets.all(8.0))],
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(Icons.notifications, color: Color.fromARGB(255, 255, 255, 255)),
+          ),
+        ],
       ),
 
       // body
