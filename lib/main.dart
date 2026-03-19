@@ -156,15 +156,25 @@ class HomePage extends StatelessWidget {
 
   // widget menu item
   static Widget menuItem(IconData icon, String title) {
-    return Column(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.blue[100],
-          child: Icon(icon, color: Colors.blue[900]),
+  return Column(
+    children: [
+      Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.blue[50],
+          shape: BoxShape.circle,
         ),
-        const SizedBox(height: 8),
-        Text(title, style: const TextStyle(fontSize: 12)),
-      ],
-    );
-  }
+        child: Icon(icon, color: Colors.blue[900], size: 28),
+      ),
+      const SizedBox(height: 8),
+      Text(
+        title,
+        style: const TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ],
+  );
+}
 }
