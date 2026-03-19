@@ -50,6 +50,30 @@ class HomePage extends StatelessWidget {
       // body
       body: ListView(
         children: [
+          Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 16),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: const [
+      Text(
+        "Halo, Abd Hamid👋",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      SizedBox(height: 4),
+      Text(
+        "Selamat Datang Kembali",
+        style: TextStyle(
+          color: Colors.white70,
+          fontSize: 14,
+        ),
+      ),
+    ],
+  ),
+),
           // saldo
           Container(
             margin: const EdgeInsets.all(16),
@@ -147,6 +171,7 @@ class HomePage extends StatelessWidget {
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             ),
           ),
+          const Divider(),
 
           ListTile(
             leading: CircleAvatar(
@@ -166,6 +191,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          const Divider(),
 
           ListTile(
             leading: CircleAvatar(
