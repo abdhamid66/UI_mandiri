@@ -93,7 +93,16 @@ class HomePage extends StatelessWidget {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
+                Container(
+                  height: 4,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                SizedBox(height: 10),
                 Text("Saldo Anda", style: TextStyle(color: Colors.white70)),
                 SizedBox(height: 8),
                 Text(
