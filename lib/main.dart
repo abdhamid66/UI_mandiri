@@ -29,8 +29,12 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.blue[900],
         elevation: 0,
         title: const Text(
-          "Livin' by mandiri",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          "Livin' by Mandiri",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            letterSpacing: 1,
+          ),
         ),
         actions: const [Padding(padding: EdgeInsets.all(8.0))],
       ),
