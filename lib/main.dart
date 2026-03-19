@@ -39,7 +39,10 @@ class HomePage extends StatelessWidget {
         actions: const [
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.notifications, color: Color.fromARGB(255, 255, 255, 255)),
+            child: Icon(
+              Icons.notifications,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
           ),
         ],
       ),
@@ -65,7 +68,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text("Saldo Anda",style: TextStyle(color: Colors.white70)),
+                Text("Saldo Anda", style: TextStyle(color: Colors.white70)),
                 SizedBox(height: 8),
                 Text(
                   "Rp 20.000.000",
@@ -90,7 +93,7 @@ class HomePage extends StatelessWidget {
               children: [
                 // row 1
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     menuItem(Icons.send, "Transfer"),
                     menuItem(Icons.payment, "bayar"),
@@ -101,7 +104,7 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 20),
                 // row 2
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     menuItem(Icons.account_balance_wallet, "Tagihan"),
                     menuItem(Icons.qr_code_scanner, "Scan QR"),
@@ -130,24 +133,48 @@ class HomePage extends StatelessWidget {
           ),
           // LISTVIEW ITEM
           ListTile(
-            leading: Icon(Icons.arrow_upward, color: Colors.red),
-            title: Text("Transfer ke Budi"),
-            subtitle: Text("Kemarin"),
-            trailing: Text("- Rp 200.000"),
+            leading: CircleAvatar(
+              backgroundColor: Colors.red[100],
+              child: Icon(Icons.arrow_upward, color: Colors.red),
+            ),
+            title: const Text(
+              "Transfer ke Budi",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: const Text("Kemarin"),
+            trailing: const Text(
+              "- Rp 200.000",
+              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+            ),
           ),
 
           ListTile(
-            leading: Icon(Icons.arrow_downward, color: Colors.green),
-            title: Text("Gaji Masuk"),
-            subtitle: Text("2 hari lalu"),
-            trailing: Text("+ Rp 5.000.000"),
+            leading: CircleAvatar(
+              backgroundColor: Colors.green[100],
+              child: Icon(Icons.arrow_downward, color: Colors.green),
+            ),
+            title: const Text(
+              "Gaji Masuk",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: const Text("2 hari lalu"),
+            trailing: const Text(
+              "+ Rp 5.000.000",
+              style: TextStyle(
+                color: Colors.green,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
 
           ListTile(
-            leading: Icon(Icons.payment, color: Colors.orange),
-            title: Text("Bayar Listrik"),
-            subtitle: Text("3 hari lalu"),
-            trailing: Text("- Rp 150.000"),
+            leading: CircleAvatar(
+              backgroundColor: Colors.orange[100],
+              child: Icon(Icons.payment, color: Colors.orange),
+            ),
+            title: const Text("Bayar Listrik"),
+            subtitle: const Text("3 hari lalu" ),
+            trailing: const Text("- Rp 150.000 ", style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
           ),
         ],
       ),
@@ -156,25 +183,22 @@ class HomePage extends StatelessWidget {
 
   // widget menu item
   static Widget menuItem(IconData icon, String title) {
-  return Column(
-    children: [
-      Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.blue[50],
-          shape: BoxShape.circle,
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: Colors.blue[50],
+            shape: BoxShape.circle,
+          ),
+          child: Icon(icon, color: Colors.blue[900], size: 28),
         ),
-        child: Icon(icon, color: Colors.blue[900], size: 28),
-      ),
-      const SizedBox(height: 8),
-      Text(
-        title,
-        style: const TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w500,
+        const SizedBox(height: 8),
+        Text(
+          title,
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
         ),
-      ),
-    ],
-  );
-}
+      ],
+    );
+  }
 }
