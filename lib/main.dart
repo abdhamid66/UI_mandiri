@@ -27,10 +27,6 @@ class HomePage extends StatelessWidget {
       // appBar: AppBar
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(3),
-          child: ColoredBox(color: Colors.yellow, child: SizedBox(height: 3)),
-        ),
         elevation: 0,
         title: const Text(
           "Livin' by Mandiri",
@@ -39,6 +35,10 @@ class HomePage extends StatelessWidget {
             fontSize: 18,
             letterSpacing: 1,
           ),
+        ),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(3),
+          child: ColoredBox(color: Colors.yellow, child: SizedBox(height: 3)),
         ),
         actions: const [
           Padding(
@@ -67,6 +67,7 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+
                 SizedBox(height: 4),
                 Text(
                   "Selamat Datang Kembali",
